@@ -1,0 +1,88 @@
+ngo_path = [[['open defecation', 'primary school'], [1, 1], 1],
+            [['clean water', 'water systems'], [1, 0], 1],
+            [['water systems', 'drinking water'], [0, 1], 1],
+            [['water point', 'drinking water'], [0, 1], 1],
+            [['safe water', 'primary school'], [0, 1], 1],
+            [['open defecation', 'hand washing', 'safe water'], [1, 0, 0], 1],
+            [['water systems', 'drinking water'], [1, 0], 0],
+            [['water supply', 'drinking water', 'primary school'], [1, 0, 0], 0],
+            [['water point', 'water systems', 'open defecation'], [1, 1, 0], 0],
+            [['hand washing', 'safe water', 'primary school'], [1, 0, 0], 0]]
+ngo_tot = [6, 4]
+
+eng_path = [[['implementation trip'], [1], 1],
+            [['community member', 'drinking water'], [1, 0], 1],
+            [['community member', 'travel team'], [1, 0], 1],
+            [['water quality', 'drinking water'], [1, 0], 1],
+            [['flow rate', 'clean water'], [1, 0], 1],
+            [['flow rate', 'storage tank'], [1, 1], 1],
+            [['community member', 'water committee', 'flow rate', 'clean water'], [1, 1, 0, 1], 1],
+            [['community member', 'water quality', 'flow rate'], [0, 0, 0], 0],
+            [['travel team', 'flow rate', 'implementation trip', 'storage tank'], [1, 0, 0, 1], 0],
+            [['flow rate', 'implementation trip', 'storage tank', 'clean water'], [1, 0, 0, 1], 0]]
+eng_tot = [7, 3]
+
+fund_path = [[['project management', 'task team'], [0, 0], 1],
+             [['water quality', 'task team', 'water resources'], [0, 0, 0], 1],
+             [['appraisal estimate', 'water quality', 'task team'], [0, 0, 0], 1],
+             [['water supply', 'appraisal estimate', 'water quality'], [0, 0, 1], 1],
+             [['water supply', 'appraisal estimate', 'task team'], [0, 1, 1], 1],
+             [['appraisal estimate', 'water quality', 'task team'], [1, 1, 1], 1],
+             [['water supply', 'appraisal estimate', 'water resources'], [1, 1, 1], 1],
+             [['project management', 'task team', 'water resources'], [1, 1, 1], 1],
+             [['project management', 'water supply', 'water quality', 'water resources'], [1, 0, 1, 1], 0],
+             [['project management', 'water supply', 'water quality', 'task team', 'water resources'], [1, 1, 1, 0, 0], 0]]
+fund_tot = [8, 2]
+
+compare_path = [[['total project cost', 'development objective', 'actual cost'], [1, 0, 0], 1],
+                [['water supply', 'total project cost', 'development objective'], [0, 1, 0], 1],
+                [['capacity building', 'development objective', 'results framework'], [0, 1, 0], 1],
+                [['closing date', 'development objective', 'results framework', 'private sector'], [1, 1, 0, 0], 1],
+                [['water supply', 'capacity building', 'technical assistance', 'private sector'], [1, 0, 0, 1], 1],
+                [['water supply', 'capacity building', 'development objective', 'actual cost'], [1, 1, 1, 1], 1],
+                [['development objective', 'technical assistance', 'results framework', 'actual cost', 'private sector'], [1, 1, 1, 1, 0], 1],
+                [['capacity building', 'development objective', 'technical assistance', 'results framework', 'private sector'], [1, 1, 1, 1, 1], 1],
+                [['financial management', 'development objective'], [0, 1], 1],
+                [['closing date', 'results framework'], [0, 1], 1],
+                [['development objective', 'technical assistance', 'actual cost'], [1, 0, 0], 1],
+                [['water supply', 'closing date', 'technical assistance'], [1, 1, 0], 1],
+                [['water supply', 'capacity building', 'technical assistance', 'private sector'], [1, 1, 0, 0], 1],
+                [['total project cost', 'capacity building', 'technical assistance', 'private sector'], [1, 1, 0, 0], 1],
+                [['water supply', 'capacity building', 'technical assistance', 'actual cost', 'private sector'], [0, 0, 0, 0, 0], 1],
+                [['water supply', 'closing date', 'capacity building', 'results framework'], [0, 0, 1, 0], 0],
+                [['water supply', 'development objective', 'technical assistance', 'results framework'], [1, 0, 1, 0], 0],
+                [['water supply', 'capacity building', 'technical assistance', 'actual cost'], [1, 0, 1, 0], 0],
+                [['capacity building', 'results framework', 'actual cost', 'private sector'], [1, 0, 0, 1], 0],
+                [['water supply', 'capacity building', 'development objective', 'results framework', 'private sector'], [0, 1, 1, 0, 1], 0],
+                [['water supply', 'closing date', 'capacity building', 'development objective', 'technical assistance', 'private sector'], [0, 1, 0, 1, 1, 1], 0]]
+
+compare_tot = [15, 6]
+
+compare_path_2 = [[['project management', 'appraisal estimate'], [0, 1], 1],
+                  [['water supply', 'water committee', 'clean water'], [0, 0, 1], 1],
+                  [['water supply', 'project management', 'task team'], [0, 1, 1], 1],
+                  [['water quality', 'appraisal estimate', 'task team'], [1, 1, 1], 1],
+                  [['project management', 'appraisal estimate', 'task team', 'water point'], [1, 0, 0, 0], 1],
+                  [['water supply', 'water quality', 'water committee', 'water point'], [1, 0, 1, 0], 1],
+                  [['water supply', 'water quality', 'appraisal estimate', 'task team'], [1, 0, 1, 0], 1],
+                  [['water supply', 'community member'], [0, 1], 1],
+                  [['appraisal estimate', 'water point'], [1, 1], 1],
+                  [['task team', 'water point'], [1, 1], 1],
+                  [['task team', 'water systems'], [1, 1], 1],
+                  [['water supply', 'water quality', 'appraisal estimate'], [0, 1, 0], 1],
+                  [['community member', 'water committee', 'water systems'], [1, 0, 0], 1],
+                  [['water quality', 'community member', 'water systems'], [0, 1, 0], 1],
+                  [['water committee', 'water point', 'water systems'], [1, 1, 0], 1],
+                  [['water quality', 'water point', 'water systems'], [1, 0, 1], 1],
+                  [['water quality', 'community member', 'water systems'], [1, 1, 1], 1],
+                  [['water supply', 'community member', 'water committee'], [0, 0, 1], 0],
+                  [['water supply', 'water quality', 'project management', 'appraisal estimate'], [0, 1, 1, 1], 0],
+                  [['water supply', 'community member', 'project management', 'appraisal estimate', 'water point'], [1, 0, 0, 0, 1], 0],
+                  [['water supply', 'water quality', 'water committee', 'project management', 'water systems'], [1, 0, 0, 0, 1], 0],
+                  [['water quality', 'water committee', 'clean water', 'water point', 'water systems'], [1, 1, 1, 0, 0], 0],
+                  [['water supply', 'task team', 'clean water', 'water point', 'water systems'], [1, 0, 0, 1, 1], 0],
+                  [['water quality', 'task team', 'clean water'], [0, 1, 1], 0],
+                  [['water quality', 'water committee', 'project management', 'clean water', 'water point', 'water systems'], [0, 0, 0, 0, 0, 1], 0],
+                  [['water supply', 'water committee', 'appraisal estimate', 'clean water', 'water point', 'water systems'], [1, 0, 0, 1, 1, 0], 0]]
+
+compare_tot_2 = [17, 9]

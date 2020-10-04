@@ -1,0 +1,119 @@
+**********************
+Engineer - Success
+**********************
+Model: outcome = f(communitymember, watersupply, watercommittee, waterquality, travelteam, flowrate, implementationtrip, storagetank, cleanwater, drinkingwater)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 1
+                                                           raw       unique              
+                                                         coverage    coverage   consistency 
+                                                        ----------  ----------  ----------  
+implementationtrip                                      0.433333    0.0333334   1           
+communitymember*~drinkingwater                          0.6         0.0666667   1           
+communitymember*~travelteam                             0.433333    0.0666667   1           
+waterquality*~drinkingwater                             0.2         0.0333334   1           
+flowrate*~cleanwater                                    0.3         0.0333334   1           
+flowrate*storagetank                                    0.166667    0.0666667   1           
+communitymember*watercommittee*~flowrate*cleanwater     0.1         0.0333334   1           
+solution coverage: 1
+solution consistency: 1
+
+**********************
+Engineer - Failure
+**********************
+Model: outcome_reverse = f(communitymember, watersupply, watercommittee, waterquality, travelteam, flowrate, implementationtrip, storagetank, cleanwater, drinkingwater)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 1
+                                                            raw       unique              
+                                                          coverage    coverage   consistency 
+                                                         ----------  ----------  ----------  
+~communitymember*~waterquality*~flowrate                 0.7         0.7         1           
+travelteam*~flowrate*~implementationtrip*storagetank     0.2         0.2         1           
+flowrate*~implementationtrip*~storagetank*cleanwater     0.1         0.1         1           
+solution coverage: 1
+solution consistency: 1
+
+**********************
+Funder - Success
+**********************
+Model: outcome = f(projectmanagement, watersupply, appraisalestimate, waterquality, taskteam, waterresources)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 0.8
+                                                    raw       unique              
+                                                  coverage    coverage   consistency 
+                                                 ----------  ----------  ----------  
+~projectmanagement*~taskteam                     0.342466    0.0684931   0.892857    
+~waterquality*~taskteam*~waterresources          0.369863    0.0821918   0.870968    
+~appraisalestimate*~waterquality*~taskteam       0.246575    0.0547945   0.9         
+~watersupply*~appraisalestimate*waterquality     0.0684932   0.0410959   1           
+~watersupply*appraisalestimate*taskteam          0.0410959   0.0273972   1           
+appraisalestimate*waterquality*taskteam          0.0547945   0.0273972   1           
+watersupply*appraisalestimate*waterresources     0.150685    0.0547945   1           
+projectmanagement*taskteam*waterresources        0.0958904   0.0547945   1           
+solution coverage: 0.849315
+solution consistency: 0.939394
+
+**********************
+Funder - Failure
+**********************
+Model: outcome_reverse = f(projectmanagement, watersupply, appraisalestimate, waterquality, taskteam, waterresources)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 1
+                                                                            raw       unique              
+                                                                          coverage    coverage   consistency 
+                                                                         ----------  ----------  ----------  
+projectmanagement*~watersupply*waterquality*waterresources               0.0666667   0.0666667   1           
+projectmanagement*watersupply*waterquality*~taskteam*~waterresources     0.0666667   0.0666667   1           
+solution coverage: 0.133333
+solution consistency: 1
+
+**********************
+INGO - Success
+**********************
+Model: outcome = f(cleanwater, watersupply, waterpoint, watersystems, drinkingwater, opendefecation, spareparts, handwashing, safewater, primaryschool)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 1
+                                              raw       unique              
+                                            coverage    coverage   consistency 
+                                           ----------  ----------  ----------  
+opendefecation*primaryschool               0.1         0.05        1           
+cleanwater*~watersystems                   0.45        0.35        1           
+~watersystems*drinkingwater                0.15        0.05        1           
+~waterpoint*drinkingwater                  0.15        0.05        1           
+~safewater*primaryschool                   0.1         0.05        1           
+opendefecation*~handwashing*~safewater     0.05        0.05        1           
+solution coverage: 0.75
+solution consistency: 1
+
+**********************
+INGO - Failure
+**********************
+Model: outcome_reverse = f(cleanwater, watersupply, waterpoint, watersystems, drinkingwater, opendefecation, spareparts, handwashing, safewater, primaryschool)
+Algorithm: Quine-McCluskey
+
+--- PARSIMONIOUS SOLUTION ---
+frequency cutoff: 1
+consistency cutoff: 1
+                                                 raw       unique              
+                                               coverage    coverage   consistency 
+                                              ----------  ----------  ----------  
+watersystems*~drinkingwater                   0.6         0.15        1           
+watersupply*~drinkingwater*~primaryschool     0.5         0.05        1           
+waterpoint*watersystems*~opendefecation       0.5         0.15        1           
+handwashing*~safewater*~primaryschool         0.1         0.05        1           
+solution coverage: 0.9
+solution consistency: 1
